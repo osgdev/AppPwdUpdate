@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+
+     <Appenders>
+       <File name="file">
+         <Append>false</Append>
+         <FileName>logs/AppPwdUpdate.log</FileName>
+         <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} [%-5level] %c{3} - %msg%ex{short}%n" />
+       </File>
+       <Console name="console" target="SYSTEM_OUT">
+         <PatternLayout pattern="%d{HH:mm:ss} [%-5level] %c{3} - %msg%ex{short}%n" />
+       </Console>
+    </Appenders>
+    
+    <Loggers>
+      <Root level="all">
+		<AppenderRef ref="console" level="info"/>
+		<AppenderRef ref="file" level="info"/>
+      </Root>
+    </Loggers>
+    
+</Configuration>
