@@ -59,6 +59,7 @@ public class Main {
 
 	/**
 	 * Loads properties file and network configuration file
+	 * Usage: AppPwdUpdate.jar {config_file} {data_file}
 	 * @param args command line arguments
 	 */
 	private static void processArgs(String[] args) {
@@ -67,10 +68,10 @@ public class Main {
 		
 		if (args.length == 2) {
 			
-			passwordsFile = args[0];
-			LOG.debug("passwordsFile = {}", passwordsFile);
-			configFile = args[1];
+			configFile = args[0];
 			LOG.debug("configFile = {}", configFile);
+			passwordsFile = args[1];
+			LOG.debug("passwordsFile = {}", passwordsFile);
 			
 			if (!(new File(passwordsFile).exists())) {
 				LOG.fatal("Data file '{}' doesn't exist!", passwordsFile);
@@ -81,7 +82,7 @@ public class Main {
 				System.exit(1);
 			}
 		} else {
-			LOG.fatal("Incorrect number of args. Usage: AppPwdUpdate.jar {data_file} {config_file}");
+			LOG.fatal("Incorrect number of args. Usage: appPwdUpdate.jar {config_file} {data_file}");
 			System.exit(1);
 		}
 	}

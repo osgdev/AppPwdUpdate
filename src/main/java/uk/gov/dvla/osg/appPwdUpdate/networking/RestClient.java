@@ -45,13 +45,13 @@ public class RestClient {
         									 .get();
         	String data = response.readEntity(String.class); 
             if (response.getStatus() == 200) {
-            	LOG.info("Login succeeded");
+            	LOG.trace("Login succeeded");
             	String token = JsonUtils.getTokenFromJson(data);
             	return token;
             } else {
             	// RPD provides clear error information, and so is mapped to model
                 LoginBadResponseModel br = new GsonBuilder().create().fromJson(data, LoginBadResponseModel.class);
-                LOG.error(br.getMessage(), br.getAction(), br.getCode());
+                LOG.error("{} {} {}",br.getMessage(), br.getAction(), br.getCode());
             }
         } catch (ProcessingException e) {
         	LOG.error("Failed to connect to RPD", e);
