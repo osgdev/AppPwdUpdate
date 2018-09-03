@@ -10,7 +10,7 @@ public class RandomPasswordGenerator {
     private static final String ALPHA_CAPS  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String ALPHA   = "abcdefghijklmnopqrstuvwxyz";
     private static final String NUM     = "0123456789";
-    private static final String SPL_CHARS   = "!@#$%^&*";
+    private static final String SPL_CHARS   = "!@";
  
     private static final int NO_OF_CAPS_ALPHA = 1;
     private static final int NO_OF_DGITS = 1;
